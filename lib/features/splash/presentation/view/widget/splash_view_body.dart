@@ -1,5 +1,5 @@
-import 'package:bookly_project/core/utils/constants/constants.dart';
-import 'package:bookly_project/core/utils/constants/images.dart';
+import 'package:bookly_project/core/utils/constants/app_constants.dart';
+import 'package:bookly_project/core/utils/constants/app_images.dart';
 import 'package:bookly_project/features/home/presentation/view/home_view.dart';
 import 'package:bookly_project/features/splash/presentation/view/widget/sliding_text.dart';
 import 'package:flutter/cupertino.dart';
@@ -63,7 +63,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
         Get.to(() =>  const HomeView(),
             // calculations
             transition: Transition.fade,
-            duration: kTranstionDuration);
+            duration: AppConstance.kTranstionDuration);
 
       },
     );

@@ -1,4 +1,4 @@
-import 'package:bookly_project/core/utils/constants/text.dart';
+import 'package:bookly_project/core/utils/constants/app_text.dart';
 import 'package:flutter/material.dart';
 
 
