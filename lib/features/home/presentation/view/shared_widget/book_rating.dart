@@ -1,3 +1,4 @@
+import 'package:bookly_project/core/utils/constants/app_colors.dart';
 import 'package:bookly_project/core/utils/styles/text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -17,10 +18,10 @@ class BookRating extends StatelessWidget {
     return Row(
       mainAxisAlignment: mainAxisAlignment,
       children: [
-        const Icon(
+         Icon(
           FontAwesomeIcons.solidStar,
           size: 14,
-          color: Color(0xffFFDD4F),
+          color: AppColors.kStarRatingColor,
         ),
         const SizedBox(
           width: 6.3,
