@@ -3,7 +3,7 @@ import 'package:bookly_project/core/utils/styles/text_style.dart';
 import 'package:bookly_project/features/home/presentation/view/home_view/widget/best_seller_widgets/best_seller_list_view.dart';
 import 'package:bookly_project/features/home/presentation/view/home_view/widget/custom_app_bar.dart';
 import 'package:bookly_project/features/home/presentation/view/home_view/widget/featured_books_widgets/featured_list_view.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
