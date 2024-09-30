@@ -1,6 +1,8 @@
+import 'package:bookly_project/config/routes/app_routes.dart';
 import 'package:bookly_project/core/utils/extension/media_query_values.dart';
 import 'package:flutter/material.dart';
-import '../custom_book_image.dart';
+import 'package:go_router/go_router.dart';
+import '../../../../../../../core/widgets/custom_book_image.dart';
 
 class FeaturedBooksListView extends StatelessWidget {
   const FeaturedBooksListView({super.key});
@@ -21,7 +23,7 @@ class FeaturedBooksListView extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 8),
                 child: GestureDetector(
                   onTap: () {
-
+                    GoRouter.of(context).push(AppRouter.kBookDetailsView);
                   },
                   child: const CustomBookImage(
                     imageUrl:

@@ -10,6 +10,7 @@ abstract class AppRouter {
   static const kSearchView = '/searchView';
 
   static final router = GoRouter(
+    
     routes: [
       GoRoute(
         path: '/',
