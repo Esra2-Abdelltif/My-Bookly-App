@@ -1,7 +1,9 @@
 import 'package:bookly_project/core/utils/constants/app_text.dart';
 import 'package:bookly_project/core/utils/styles/text_style.dart';
+import 'package:bookly_project/features/home/presentation/view/widget/best_seller_widgets/best_seller_list_view.dart';
+import 'package:bookly_project/features/home/presentation/view/widget/best_seller_widgets/best_seller_list_view_item.dart';
 import 'package:bookly_project/features/home/presentation/view/widget/custom_app_bar.dart';
-import 'package:bookly_project/features/home/presentation/view/widget/featured_list_view.dart';
+import 'package:bookly_project/features/home/presentation/view/widget/featured_books_widgets/featured_list_view.dart';
 import 'package:flutter/cupertino.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -16,7 +18,7 @@ class HomeViewBody extends StatelessWidget {
         const  FeaturedBooksListView(),
 
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30,),
+          padding: const EdgeInsets.all( 30),
           child: Text(
             AppConstantText.bestSeller,
             style: Styles.textStyle18,
@@ -25,6 +27,8 @@ class HomeViewBody extends StatelessWidget {
         const SizedBox(
           height: 20,
         ),
+         Expanded(child: const BestSellerListView()),
+        // BookListViewItem()
       ],
     );
   }

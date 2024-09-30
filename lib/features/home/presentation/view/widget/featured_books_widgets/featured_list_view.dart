@@ -1,6 +1,6 @@
 import 'package:bookly_project/core/utils/extension/media_query_values.dart';
 import 'package:flutter/material.dart';
-import 'custom_book_item.dart';
+import '../custom_book_image.dart';
 
 class FeaturedBooksListView extends StatelessWidget {
   const FeaturedBooksListView({super.key});
@@ -15,14 +15,18 @@ class FeaturedBooksListView extends StatelessWidget {
             physics: const BouncingScrollPhysics(),
             itemCount: 5,
             scrollDirection: Axis.horizontal,
-            itemBuilder: (context, index) {
-              return GestureDetector(
-                onTap: () {
 
-                },
-                child: const CustomBookImage(
-                  imageUrl:
-                      '',
+            itemBuilder: (context, index) {
+              return Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8),
+                child: GestureDetector(
+                  onTap: () {
+
+                  },
+                  child: const CustomBookImage(
+                    imageUrl:
+                        '',
+                  ),
                 ),
               );
             }),
