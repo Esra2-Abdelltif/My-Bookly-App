@@ -1,5 +1,6 @@
 import 'package:bookly_project/core/utils/extension/media_query_values.dart';
 import 'package:bookly_project/core/utils/styles/text_style.dart';
+import 'package:bookly_project/features/home/presentation/view/book_details_view/widget/books_action.dart';
 import 'package:bookly_project/features/home/presentation/view/shared_widget/book_rating.dart';
 import 'package:bookly_project/features/home/presentation/view/shared_widget/custom_book_image.dart';
 import 'package:flutter/material.dart';
@@ -53,6 +54,7 @@ class BookDetailsSection extends StatelessWidget {
         const SizedBox(
           height: 37,
         ),
+        const BooksAction()
 
       ],
     );
