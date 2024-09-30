@@ -7,16 +7,16 @@ class FeaturedBooksListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height:context.height * .3,
-      child: ListView.builder(
-          physics: const BouncingScrollPhysics(),
-          itemCount: 5,
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (context, index) {
-            return Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8),
-              child: GestureDetector(
+    return Padding(
+      padding: const EdgeInsets.only(left: 30),
+      child: SizedBox(
+        height:context.height * .3,
+        child: ListView.builder(
+            physics: const BouncingScrollPhysics(),
+            itemCount: 5,
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (context, index) {
+              return GestureDetector(
                 onTap: () {
 
                 },
@@ -24,9 +24,9 @@ class FeaturedBooksListView extends StatelessWidget {
                   imageUrl:
                       '',
                 ),
-              ),
-            );
-          }),
+              );
+            }),
+      ),
     );
   }
 }
