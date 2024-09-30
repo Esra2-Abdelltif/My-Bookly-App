@@ -3,8 +3,8 @@ import 'package:bookly_project/core/utils/constants/app_constants.dart';
 import 'package:bookly_project/core/utils/constants/app_text.dart';
 import 'package:bookly_project/core/utils/extension/media_query_values.dart';
 import 'package:bookly_project/core/utils/styles/text_style.dart';
-import 'package:bookly_project/features/home/presentation/view/home_view/widget/best_seller_widgets/book_rating.dart';
-import 'package:bookly_project/core/widgets/custom_book_image.dart';
+import 'package:bookly_project/features/home/presentation/view/shared_widget/book_rating.dart';
+import 'package:bookly_project/features/home/presentation/view/shared_widget/custom_book_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

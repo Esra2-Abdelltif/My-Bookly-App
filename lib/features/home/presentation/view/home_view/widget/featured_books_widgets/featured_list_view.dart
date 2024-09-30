@@ -2,7 +2,7 @@ import 'package:bookly_project/config/routes/app_routes.dart';
 import 'package:bookly_project/core/utils/extension/media_query_values.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../../../../../../../core/widgets/custom_book_image.dart';
+import '../../../shared_widget/custom_book_image.dart';
 
 class FeaturedBooksListView extends StatelessWidget {
   const FeaturedBooksListView({super.key});
