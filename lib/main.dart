@@ -7,7 +7,7 @@ void main() {
 }
 
 class MyBooklyApp extends StatelessWidget {
-  const MyBooklyApp({Key? key}) : super(key: key);
+  const MyBooklyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
