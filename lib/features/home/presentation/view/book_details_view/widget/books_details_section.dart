@@ -1,4 +1,5 @@
 import 'package:bookly_project/core/utils/extension/media_query_values.dart';
+import 'package:bookly_project/core/utils/extension/screen_padding.dart';
 import 'package:bookly_project/core/utils/styles/text_style.dart';
 import 'package:bookly_project/features/home/presentation/view/book_details_view/widget/books_action.dart';
 import 'package:bookly_project/features/home/presentation/view/shared_widget/book_rating.dart';
@@ -14,14 +15,9 @@ class BookDetailsSection extends StatelessWidget {
 
     return Column(
       children: [
-        Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: context.width * .2,
-          ),
-          child: const CustomBookImage(
-            imageUrl:'',
-          ),
-        ),
+        const CustomBookImage(
+          imageUrl:'',
+        ).paddingHorizontal(context.width * .2),
         const SizedBox(
           height: 43,
         ),

@@ -1,3 +1,4 @@
+import 'package:bookly_project/core/utils/extension/screen_padding.dart';
 import 'package:bookly_project/features/home/presentation/view/shared_widget/custom_book_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_utils/src/extensions/context_extensions.dart';
@@ -14,13 +15,10 @@ class SimilarBooksListview extends StatelessWidget {
           itemCount: 7,
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
-            return const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 5),
-              child: CustomBookImage(
-                imageUrl:
-                '',
-              ),
-            );
+            return  const CustomBookImage(
+              imageUrl:
+              '',
+            ).paddingHorizontal(5);
           }),
     );
   }
