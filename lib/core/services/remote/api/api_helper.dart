@@ -1,9 +1,5 @@
 import 'dart:async';
-import 'package:bookly_project/core/errors/exceptions/server_exceptions/internal_server_error.dart';
-import 'package:bookly_project/core/errors/exceptions/server_exceptions/bad_request_exception.dart';
-import 'package:bookly_project/core/errors/exceptions/server_exceptions/conflict_exception.dart';
-import 'package:bookly_project/core/errors/exceptions/server_exceptions/timeout_exception.dart';
-import 'package:bookly_project/core/errors/exceptions/server_exceptions/un_authorized_exception.dart';
+import 'package:bookly_project/core/errors/exceptions/server_exceptions/server_exception.dart';
 import 'package:bookly_project/core/services/remote/api/books_api_constantace.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -79,47 +75,62 @@ extension RequestFunction on ApiHelper {
 
       return response.data;
     } on DioException catch (e) {
-      if (e.type == DioExceptionType.sendTimeout ||
-          e.type == DioExceptionType.receiveTimeout ||
-          e.type == DioExceptionType.connectionTimeout) {
-        throw TimeOutException(
-          errorCode: e.error.toString(),
-          statusCode: timeoutStatusCode,
+      if (e.type == DioExceptionType.connectionTimeout) {
+        throw ServerException(
+            statusCode: timeoutStatusCode,
+            errorMessage: "Connection timeout with ApiServer"
         );
-      } else {
+      } else if (e.type == DioExceptionType.sendTimeout) {
+        throw ServerException(
+            statusCode: timeoutStatusCode,
+            errorMessage: "Send timeout with ApiServer"
+        );
+      } else if (e.type == DioExceptionType.receiveTimeout) {
+        throw ServerException(
+            statusCode: timeoutStatusCode,
+            errorMessage: "Receive timeout with ApiServer"
+        );
+      }
+      else if (e.type == DioExceptionType.cancel) {
+        throw ServerException(
+            statusCode: timeoutStatusCode,
+            errorMessage: "Request to ApiServer was canceld"
+        );
+      }
+      else {
         _handleThrowingExceptions(e);
       }
     }
   }
 
   void _handleThrowingExceptions(DioException e) {
-    if (e.response!.statusCode == badRequestStatusCode) {
-      throw BadRequestException(
-        errorCode: e.response!.data['error_code'],
-        statusCode: badRequestStatusCode,
-        errorMessage: e.response!.data['error_description'],
+    if (e.response!.statusCode == badRequestStatusCode ||
+        e.response!.statusCode == unAuthorizedStatusCode ||
+        e.response!.statusCode == forbiddenStatusCode) {
+      throw ServerException(
+        errorMessage: e.response!.data['error']['message'],
+        statusCode: e.response!.data['code'],
       );
     }
-    if (e.response!.statusCode == internalServerErrorStatusCode) {
-      throw InternalServerErrorException(
-        errorCode: e.response!.data['error_code'],
+
+    else if (e.response!.statusCode == internalServerErrorStatusCode) {
+      throw ServerException(
         statusCode: internalServerErrorStatusCode,
-        errorMessage: e.response!.data['error_description'],
+        errorMessage: "Internal Server error, Please try later",
       );
     }
-    if (e.response!.statusCode == conflictStatusCode) {
-      throw ConflictException(
-        errorCode: e.response!.data['error_code'],
-        statusCode: conflictStatusCode,
-        errorMessage: e.response!.data['error_description'],
+
+    else if (e.response!.statusCode == notFoundStatusCode) {
+      throw ServerException(
+        errorMessage: "Your request not found, Please try later!",
+        statusCode: notFoundStatusCode,
       );
     }
-    if (e.response!.statusCode == unAuthorizedStatusCode) {
-      throw UnAuthorizedException(
-        errorCode: e.response!.data['error_code'],
-        statusCode: unAuthorizedStatusCode,
-        errorMessage: e.response!.data['error_description'],
-      );
+    else  {
+      throw ServerException(
+        errorMessage: 'Opps There was an Error, Please try again',
+        statusCode: e.response!.data['code'],);
     }
   }
 }
+

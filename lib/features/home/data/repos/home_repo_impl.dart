@@ -1,4 +1,4 @@
-import 'package:bookly_project/core/errors/exceptions/server_exceptions/server_exceptions.dart';
+import 'package:bookly_project/core/errors/exceptions/server_exceptions/failure.dart';
 import 'package:bookly_project/core/services/remote/api/api_helper.dart';
 import 'package:bookly_project/core/services/remote/api/books_api_constantace.dart';
 import 'package:bookly_project/features/home/data/models/book_model/book_model.dart';
@@ -9,7 +9,7 @@ class HomeRepoImpl implements HomeRepo {
 
   HomeRepoImpl({required this.apiHelper});
   @override
-  Future<Either<ServerExceptions, List<BookModel>>> fetchNewsetBooks() async {
+  Future<Either<Failure, List<BookModel>>> fetchNewsetBooks() async {
     try {
       var data = await apiHelper.get(endPoint: BooksApiConstance.nowBooksPath);
       List<BookModel> books = [];
@@ -22,14 +22,14 @@ class HomeRepoImpl implements HomeRepo {
       }
 
       return right(books);
-    } on ServerExceptions  catch (e) {
+    } on Failure  catch (e) {
       return left(e);
     }
 
   }
 
   @override
-  Future<Either<ServerExceptions, List<BookModel>>> fetchFeaturedBooks() async {
+  Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks() async {
     try {
       var data = await apiHelper.get(endPoint: BooksApiConstance.featuredBooksPath);
       List<BookModel> books = [];
@@ -38,13 +38,13 @@ class HomeRepoImpl implements HomeRepo {
       }
 
       return right(books);
-    } on ServerExceptions  catch (e) {
+    } on Failure  catch (e) {
       return left(e);
     }
   }
 
   @override
-  Future<Either<ServerExceptions, List<BookModel>>> fetchSimilarBooks(
+  Future<Either<Failure, List<BookModel>>> fetchSimilarBooks(
       {required String category}) async {
     try {
       var data = await apiHelper.get(endPoint: BooksApiConstance.similarBooksPath);
@@ -54,7 +54,7 @@ class HomeRepoImpl implements HomeRepo {
       }
 
       return right(books);
-    } on ServerExceptions  catch (e) {
+    } on Failure  catch (e) {
       return left(e);
     }
   }
