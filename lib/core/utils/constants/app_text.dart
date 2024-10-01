@@ -3,5 +3,7 @@ class AppConstantText {
   static String bestSeller = 'Best Seller';
   static String free = 'Free';
   static String youCanAlsoLike = 'You can also like';
+  static String searchResult = 'Search Result';
+
 
 }
