@@ -2,8 +2,14 @@ import 'package:bookly_project/config/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'core/utils/constants/app_colors.dart';
+import 'package:device_preview/device_preview.dart';
 void main() {
-  runApp(const MyBooklyApp());
+  runApp((DevicePreview(
+    enabled: true,
+    builder: (context) => const MyBooklyApp(),
+  )));
+
+
 }
 
 class MyBooklyApp extends StatelessWidget {

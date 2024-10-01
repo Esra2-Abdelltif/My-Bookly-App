@@ -1,4 +1,3 @@
-import 'package:bookly_project/core/utils/extension/screen_padding.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -23,6 +22,6 @@ class CustomBookDetailsAppBar extends StatelessWidget {
           ),
         )
       ],
-    ).paddingTop(40);
+    );
   }
 }
