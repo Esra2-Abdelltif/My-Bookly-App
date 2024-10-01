@@ -42,6 +42,7 @@ dependencies:
   #use to create route
   go_router: ^14.2.8
   device_preview: ^1.2.0
+  equatable: ^2.0.5
 
 
 dev_dependencies:
