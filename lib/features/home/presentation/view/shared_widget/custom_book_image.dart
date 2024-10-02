@@ -1,4 +1,3 @@
-import 'package:bookly_project/core/utils/constants/app_images.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 class CustomBookImage extends StatelessWidget {
