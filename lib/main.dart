@@ -1,3 +1,4 @@
+import 'package:bookly_project/bloc_observer.dart';
 import 'package:bookly_project/config/routes/app_routes.dart';
 import 'package:bookly_project/core/services/singletones/registered_singletones.dart';
 import 'package:bookly_project/features/home/presentation/manger/featured_books_cubit/featured_books_cubit.dart';
@@ -11,6 +12,7 @@ void main() async{
   WidgetsFlutterBinding.ensureInitialized();
 
   await RegisteredSingleton.registerInstances();
+  Bloc.observer = MyBlocObserver();
   runApp((DevicePreview(
     enabled: true,
     builder: (context) => const MyBooklyApp(),
