@@ -25,8 +25,10 @@ class MyBooklyApp extends StatelessWidget {
      // home: const SplashView(),
         routerConfig: AppRouter.router,
       debugShowCheckedModeBanner: false,
+
       theme: ThemeData.dark().copyWith(
     scaffoldBackgroundColor: AppColors.kPrimaryColor,
+        appBarTheme: AppBarTheme(backgroundColor:AppColors.kPrimaryColor ),
         textTheme: GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme),
     ));
   }
