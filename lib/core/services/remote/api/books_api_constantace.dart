@@ -3,7 +3,7 @@ class BooksApiConstance{
   static const String appKey= "AIzaSyCup09B7Weg3w7HbTqY0HXL9KBbGj_eM18";
   static const String nowBooksPath ="$baseUrl?Filtering=free-ebooks&Sorting=newest&q=computer science&key=$appKey";
 
-  static const String featuredBooksPath ="$baseUrl?Filtering=free-ebooks&q=flutter&key=$appKey";
+  static const String featuredBooksPath ="$baseUrl?Filtering=free-ebooks&q=subject:Programming&key=$appKey";
   static const String similarBooksPath ="$baseUrl?Filtering=free-ebooks&Sorting=relevance &q=subject:Programming&key=$appKey";
 
 
