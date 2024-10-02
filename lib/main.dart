@@ -8,7 +8,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'core/utils/constants/app_colors.dart';
 import 'package:device_preview/device_preview.dart';
-void main() async{
+
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await RegisteredSingleton.registerInstances();
@@ -17,8 +18,6 @@ void main() async{
     enabled: true,
     builder: (context) => const MyBooklyApp(),
   )));
-
-
 }
 
 class MyBooklyApp extends StatelessWidget {
@@ -27,26 +26,26 @@ class MyBooklyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-        providers: [
+      providers: [
         BlocProvider(
-        create: (context) => FeaturedBooksCubit()..fetchFeaturedBooks(),
-    ),
-    BlocProvider(
-    create: (context) => NewsetBooksCubit(
-    )..fetchNewestBooks(),
-    )
-    ],
-    child:  MaterialApp.router(
-     // home: const SplashView(),
+          create: (context) => FeaturedBooksCubit()..fetchFeaturedBooks(),
+        ),
+        BlocProvider(
+          create: (context) => NewsetBooksCubit()..fetchNewestBooks(),
+        )
+      ],
+      child: MaterialApp.router(
+        // home: const SplashView(),
         routerConfig: AppRouter.router,
-      debugShowCheckedModeBanner: false,
+        debugShowCheckedModeBanner: false,
 
-      theme: ThemeData.dark().copyWith(
-    scaffoldBackgroundColor: AppColors.kPrimaryColor,
-        appBarTheme: AppBarTheme(backgroundColor:AppColors.kPrimaryColor ),
-        textTheme: GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme),
+        theme: ThemeData.dark().copyWith(
+          scaffoldBackgroundColor: AppColors.kPrimaryColor,
+          appBarTheme: AppBarTheme(backgroundColor: AppColors.kPrimaryColor),
+          textTheme:
+              GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme),
+        ),
       ),
-    ),
     );
   }
 }
