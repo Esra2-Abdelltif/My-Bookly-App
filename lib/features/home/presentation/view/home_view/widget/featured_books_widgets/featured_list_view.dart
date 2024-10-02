@@ -21,6 +21,8 @@ class FeaturedBooksListView extends StatelessWidget {
           return SizedBox(
             height:context.height * .3,
             child: ListView.builder(
+                key: PageStorageKey<String>(featuredBooksCubit.books[0].volumeInfo.title!) ,
+
                 physics: const BouncingScrollPhysics(),
                 itemCount:  featuredBooksCubit.books.length,
                 scrollDirection: Axis.horizontal,
