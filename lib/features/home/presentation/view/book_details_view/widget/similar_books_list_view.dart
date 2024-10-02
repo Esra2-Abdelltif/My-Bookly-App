@@ -23,14 +23,11 @@ class SimilarBooksListview extends StatelessWidget {
                 itemCount: similarBooksCubit.books.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 5),
-                    child: CustomBookImage(
-                      imageUrl:
-                      similarBooksCubit.books[index].volumeInfo.imageLinks?.thumbnail ??
-                          '',
-                    ),
-                  );
+                  return CustomBookImage(
+                    imageUrl:
+                    similarBooksCubit.books[index].volumeInfo.imageLinks?.thumbnail ??
+                        '',
+                  ).paddingHorizontal(5);
                 }),
           );
         } else if (state is SimilarBooksFailure) {
@@ -40,17 +37,6 @@ class SimilarBooksListview extends StatelessWidget {
         }
       },
     );
-    return SizedBox(
-      height: context.height * .15,
-      child: ListView.builder(
-          itemCount: 7,
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (context, index) {
-            return  const CustomBookImage(
-              imageUrl:
-              '',
-            ).paddingHorizontal(5);
-          }),
-    );
+
   }
 }
