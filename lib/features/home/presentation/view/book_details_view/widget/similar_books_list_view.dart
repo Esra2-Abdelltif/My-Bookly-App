@@ -6,7 +6,6 @@ import 'package:bookly_project/features/home/presentation/manger/similar_books_c
 import 'package:bookly_project/features/home/presentation/view/shared_widget/custom_book_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get/get_utils/src/extensions/context_extensions.dart';
 import 'package:go_router/go_router.dart';
 
 
