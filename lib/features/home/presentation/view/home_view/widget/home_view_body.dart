@@ -11,15 +11,15 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return   CustomScrollView(
-       physics:   const BouncingScrollPhysics(),
+    return CustomScrollView(
+      physics: const BouncingScrollPhysics(),
       slivers: [
         SliverToBoxAdapter(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const  CustomAppBar(),
-              const  FeaturedBooksListView(),
+              const CustomAppBar(),
+              const FeaturedBooksListView(),
               Text(
                 AppConstantText.bestSeller,
                 style: Styles.textStyle18,
@@ -27,11 +27,18 @@ class HomeViewBody extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-
             ],
           ),
         ),
-        const SliverFillRemaining(child:  BestSellerListView()),
+        SliverList(
+            delegate: SliverChildBuilderDelegate(
+          //This approach ensures that only the visible items are rendered
+          (BuildContext context, int index) {
+            return const BestSellerListView();
+          },
+          childCount: 1,
+        )),
+        // const SliverFillRemaining(child: BestSellerListView()),
       ],
     );
   }
