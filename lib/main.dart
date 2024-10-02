@@ -1,6 +1,5 @@
 import 'package:bookly_project/config/routes/app_routes.dart';
 import 'package:bookly_project/core/services/singletones/registered_singletones.dart';
-import 'package:bookly_project/features/home/data/repos/home_repo_impl.dart';
 import 'package:bookly_project/features/home/presentation/manger/featured_books_cubit/featured_books_cubit.dart';
 import 'package:bookly_project/features/home/presentation/manger/newest_books_cubit/newset_books_cubit.dart';
 import 'package:flutter/material.dart';
