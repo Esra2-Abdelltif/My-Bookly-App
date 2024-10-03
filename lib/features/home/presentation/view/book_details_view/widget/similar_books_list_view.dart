@@ -1,3 +1,4 @@
+import 'package:bookly_project/config/routes/app_routes.dart';
 import 'package:bookly_project/core/utils/extension/screen_padding.dart';
 import 'package:bookly_project/core/widgets/custom_error_widget.dart';
 import 'package:bookly_project/core/widgets/custom_loading_indicator.dart';
@@ -5,7 +6,7 @@ import 'package:bookly_project/features/home/presentation/manger/similar_books_c
 import 'package:bookly_project/features/home/presentation/view/shared_widget/custom_book_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get/get_utils/src/extensions/context_extensions.dart';
+import 'package:go_router/go_router.dart';
 
 
 class SimilarBooksListview extends StatelessWidget {
@@ -20,14 +21,20 @@ class SimilarBooksListview extends StatelessWidget {
           return SizedBox(
             height: MediaQuery.of(context).size.height * .15,
             child: ListView.builder(
+                key: PageStorageKey<String>(similarBooksCubit.books[0].volumeInfo.title!) ,
                 itemCount: similarBooksCubit.books.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
-                  return CustomBookImage(
-                    imageUrl:
-                    similarBooksCubit.books[index].volumeInfo.imageLinks?.thumbnail ??
-                        '',
-                  ).paddingHorizontal(5);
+                  return GestureDetector(
+                    onTap: () {
+                      GoRouter.of(context).pushReplacement(AppRouter.kBookDetailsView,extra:   similarBooksCubit.books[index]);
+                    },
+                    child: CustomBookImage(
+                      imageUrl:
+                      similarBooksCubit.books[index].volumeInfo.imageLinks?.thumbnail ??
+                          '',
+                    ).paddingHorizontal(5),
+                  );
                 }),
           );
         } else if (state is SimilarBooksFailure) {

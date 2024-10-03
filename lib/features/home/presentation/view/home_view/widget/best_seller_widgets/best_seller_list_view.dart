@@ -18,6 +18,7 @@ class BestSellerListView extends StatelessWidget {
 
         if (state is NewsetBooksSuccess) {
           return ListView.builder(
+            key: PageStorageKey<String>(newsetBooksCubit.books[0].volumeInfo.title!) ,
             physics: const NeverScrollableScrollPhysics(),
             padding: EdgeInsets.zero,
             shrinkWrap: true,
