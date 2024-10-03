@@ -17,15 +17,8 @@ class SimilarBooksCubit extends  Cubit<SimilarBooksState> {
   Failure? serverException;
   late List<BookModel> books;
 
-  Future<void> fetchSimilarBooks({required String category}) async {
-    try {
-      await _fetchSimilarBooks(category: category);
-    } catch (e) {
-      emit(NoInternetConnectionState());
-    }
-  }
 
-  Future<void> _fetchSimilarBooks({required String category}) async {
+  Future<void> fetchSimilarBooks({required String category}) async {
     emit(SimilarBooksLoading());
     await getIt<HomeRepo>().fetchFeaturedBooks().then((value) {
       value.fold((feature) {

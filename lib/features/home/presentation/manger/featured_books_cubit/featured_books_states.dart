@@ -9,7 +9,6 @@ abstract class FeaturedBooksState extends Equatable {
 }
 
 class FeaturedBooksInitial extends FeaturedBooksState {}
-class NoInternetConnectionState extends FeaturedBooksState {}
 
 class FeaturedBooksLoading extends FeaturedBooksState {}
 

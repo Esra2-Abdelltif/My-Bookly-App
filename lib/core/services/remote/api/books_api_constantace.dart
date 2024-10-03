@@ -1,5 +1,5 @@
 class BooksApiConstance{
-  static const String baseUrl='https://www.googleapis.com/books/v1/volumes';
+  static const String baseUrl='https://www.googleapis.com/books/v1';
   static const String appKey= "AIzaSyCup09B7Weg3w7HbTqY0HXL9KBbGj_eM18";
   static const String nowBooksPath ="$baseUrl?Filtering=free-ebooks&Sorting=newest&q=computer science&key=$appKey";
 

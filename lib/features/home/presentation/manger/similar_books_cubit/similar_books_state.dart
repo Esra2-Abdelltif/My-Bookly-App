@@ -9,7 +9,6 @@ abstract class SimilarBooksState extends Equatable {
 
 class SimilarBooksInitial extends SimilarBooksState {}
 
-class NoInternetConnectionState extends SimilarBooksState {}
 
 
 class SimilarBooksFailure extends SimilarBooksState {}

@@ -14,14 +14,8 @@ class FeaturedBooksCubit extends Cubit<FeaturedBooksState> {
 
   Failure? serverException;
   late List<BookModel> books;
+
   Future<void> fetchFeaturedBooks() async {
-    try {
-      await _fetchFeaturedBooks();
-    } catch (e) {
-      emit(NoInternetConnectionState());
-    }
-  }
-  Future<void> _fetchFeaturedBooks() async {
     emit(FeaturedBooksLoading());
 
     await getIt<HomeRepo>().fetchFeaturedBooks().then((value) {
