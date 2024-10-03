@@ -109,7 +109,7 @@ extension RequestFunction on ApiHelper {
         e.response!.statusCode == forbiddenStatusCode) {
       throw ServerException(
         errorMessage: e.response!.data['error']['message'],
-        statusCode: e.response!.data['code'],
+        statusCode: e.response!.data['error']['code'],
       );
     }
 
@@ -129,7 +129,7 @@ extension RequestFunction on ApiHelper {
     else  {
       throw ServerException(
         errorMessage: 'Opps There was an Error, Please try again',
-        statusCode: e.response!.data['code'],);
+        statusCode: e.response!.data['error']['code'],);
     }
   }
 }
