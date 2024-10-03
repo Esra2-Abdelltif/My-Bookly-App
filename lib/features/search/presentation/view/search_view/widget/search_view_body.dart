@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:bookly_project/core/utils/constants/app_text.dart';
 import 'package:bookly_project/core/utils/extension/screen_padding.dart';
 import 'package:bookly_project/core/utils/styles/text_style.dart';
@@ -12,41 +13,46 @@ class SearchViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<SearchBooksCubit, SearchBooksState>(
-      builder: (context, state) {
-        SearchBooksCubit searchBooksCubit = SearchBooksCubit.ofCurrentContext(context);
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            CustomSearchTextField(
-              controller: searchBooksCubit.controller,
-              onTap:(){
-                searchBooksCubit.fetchSearchBooks();
-              } ,
-              onChanged: (String value) {
-                searchBooksCubit.searchFun();
+    return BlocProvider(
+      create: (context) => SearchBooksCubit(),
+      child: BlocBuilder<SearchBooksCubit, SearchBooksState>(
+        builder: (context, state) {
+          SearchBooksCubit searchBooksCubit = SearchBooksCubit.ofCurrentContext(
+              context);
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              FadeInUp(
+              from: 50,child:  CustomSearchTextField(
+                  controller: searchBooksCubit.controller,
+                  onTap: () {
+                    searchBooksCubit.fetchSearchBooks();
+                  },
+                  onChanged: (String value) {
+                    searchBooksCubit.searchFun();
+                  },
+                ),
+              ),
+              const SizedBox(
+                height: 16,
+              ),
 
-              },
-            ),
-            const SizedBox(
-              height: 16,
-            ),
-
-            searchBooksCubit.controller.text.isEmpty ? const Center() : Text(
-                    AppConstantText.searchResult,
-                    style: Styles.textStyle18,
-                  ),
-            const SizedBox(
-              height: 16,
-            ),
-            searchBooksCubit.controller.text.isEmpty
-                ? const Center()
-                : const Expanded(
-                    child: SearchResultListView(),
-                  ),
-          ],
-        );
-      },
+              searchBooksCubit.controller.text.isEmpty ? const Center() : Text(
+                AppConstantText.searchResult,
+                style: Styles.textStyle18,
+              ),
+              const SizedBox(
+                height: 16,
+              ),
+              searchBooksCubit.controller.text.isEmpty
+                  ? const Center()
+                  : const Expanded(
+                child: SearchResultListView(),
+              ),
+            ],
+          );
+        },
+      ),
     ).addScreenPadding();
   }
 }

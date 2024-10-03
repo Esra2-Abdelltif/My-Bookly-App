@@ -2,7 +2,6 @@ import 'package:bookly_project/config/routes/app_routes.dart';
 import 'package:bookly_project/core/utils/extension/media_query_values.dart';
 import 'package:bookly_project/core/utils/extension/screen_padding.dart';
 import 'package:bookly_project/core/widgets/custom_error_widget.dart';
-import 'package:bookly_project/core/widgets/custom_loading_indicator.dart';
 import 'package:bookly_project/features/home/presentation/manger/featured_books_cubit/featured_books_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -22,11 +21,9 @@ class FeaturedBooksListView extends StatelessWidget {
             height:context.height * .3,
             child: ListView.builder(
                 key: PageStorageKey<String>(featuredBooksCubit.books[0].volumeInfo.title!) ,
-
                 physics: const BouncingScrollPhysics(),
                 itemCount:  featuredBooksCubit.books.length,
                 scrollDirection: Axis.horizontal,
-
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8),
@@ -45,9 +42,23 @@ class FeaturedBooksListView extends StatelessWidget {
                 }),
           ).paddingLeft(30-8);
         } else if (state is FeaturedBooksFailure) {
-          return CustomErrorWidget(errMessage: featuredBooksCubit.serverException!.errorMessage!);
+          return SizedBox(
+              height:context.height * .3,
+              child: CustomErrorWidget(errMessage: featuredBooksCubit.serverException!.errorMessage!));
         } else {
-          return const CustomLoadingIndicator();
+          return SizedBox(
+            height:context.height * .3,
+            child: ListView.builder(
+                physics: const BouncingScrollPhysics(),
+                itemCount:10,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 8),
+                    child: CustomBookImageAnimation()
+                  );
+                }),
+          ).paddingLeft(30-8);
         }
       },
     );

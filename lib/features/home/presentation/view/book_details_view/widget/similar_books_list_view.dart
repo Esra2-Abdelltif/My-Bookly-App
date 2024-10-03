@@ -1,7 +1,6 @@
 import 'package:bookly_project/config/routes/app_routes.dart';
 import 'package:bookly_project/core/utils/extension/screen_padding.dart';
 import 'package:bookly_project/core/widgets/custom_error_widget.dart';
-import 'package:bookly_project/core/widgets/custom_loading_indicator.dart';
 import 'package:bookly_project/features/home/presentation/manger/similar_books_cubit/similar_books_cubit.dart';
 import 'package:bookly_project/features/home/presentation/view/shared_widget/custom_book_image.dart';
 import 'package:flutter/material.dart';
@@ -40,7 +39,15 @@ class SimilarBooksListview extends StatelessWidget {
         } else if (state is SimilarBooksFailure) {
           return CustomErrorWidget(errMessage:similarBooksCubit.serverException!.errorMessage!);
         } else {
-          return const CustomLoadingIndicator();
+          return SizedBox(
+            height: MediaQuery.of(context).size.height * .15,
+            child: ListView.builder(
+                itemCount: 10,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return const CustomBookImageAnimation().paddingHorizontal(5);
+                }),
+          );
         }
       },
     );
