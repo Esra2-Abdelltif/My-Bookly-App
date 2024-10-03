@@ -17,7 +17,8 @@ class SearchBooksCubit extends Cubit<SearchBooksState> {
 
   final TextEditingController controller = TextEditingController();
   Failure? serverException;
-  late List<BookModel> books=[];
+  late List<BookModel> books;
+
   Timer? debounce;
 
   Future<void> fetchSearchBooks() async {
@@ -46,7 +47,6 @@ class SearchBooksCubit extends Cubit<SearchBooksState> {
 
       });
     });
-// TODO: implement onChange
 
   }
 }
