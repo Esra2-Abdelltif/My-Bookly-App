@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:bookly_project/core/utils/constants/app_text.dart';
 import 'package:bookly_project/core/utils/extension/screen_padding.dart';
 import 'package:bookly_project/core/utils/styles/text_style.dart';
@@ -18,12 +19,17 @@ class HomeViewBody extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const CustomAppBar(),
-              const FeaturedBooksListView(),
-              Text(
-                AppConstantText.bestSeller,
-                style: Styles.textStyle18,
-              ).paddingAll(30),
+              FadeInUp(
+                  from: 20,child: const CustomAppBar()),
+              FadeInUp(
+                  from: 30,child: const FeaturedBooksListView()),
+              FadeInUp(
+                from: 40,
+                child: Text(
+                  AppConstantText.bestSeller,
+                  style: Styles.textStyle18,
+                ).paddingAll(30),
+              ),
               const SizedBox(
                 height: 10,
               ),
@@ -32,9 +38,9 @@ class HomeViewBody extends StatelessWidget {
         ),
         SliverList(
             delegate: SliverChildBuilderDelegate(
-          //This approach ensures that only the visible items are rendered
           (BuildContext context, int index) {
-            return const BestSellerListView();
+            return FadeInUp(
+                from: 50,child: const BestSellerListView());
           },
           childCount: 1,
         )),
