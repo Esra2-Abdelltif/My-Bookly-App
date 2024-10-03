@@ -15,14 +15,8 @@ class NewsetBooksCubit extends Cubit<NewsetBooksState> {
 
   Failure? serverException;
   late List<BookModel> books;
+
   Future<void> fetchNewestBooks() async {
-    try {
-      await _fetchNewestBooks();
-    } catch (e) {
-      emit(NoInternetConnectionState());
-    }
-  }
-  Future<void> _fetchNewestBooks() async {
     emit(NewsetBooksLoading());
 
     await getIt<HomeRepo>().fetchNewsetBooks().then((value) {

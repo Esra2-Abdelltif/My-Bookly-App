@@ -9,7 +9,6 @@ abstract class NewsetBooksState extends Equatable {
 }
 
 class NewsetBooksInitial extends NewsetBooksState {}
-class NoInternetConnectionState extends NewsetBooksState {}
 
 class NewsetBooksLoading extends NewsetBooksState {}
 
