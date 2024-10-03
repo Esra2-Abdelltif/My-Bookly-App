@@ -1,3 +1,4 @@
+import 'package:bookly_project/features/home/presentation/view/shared_widget/custom_book_image_animation.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 class CustomBookImage extends StatelessWidget {
@@ -14,6 +15,7 @@ class CustomBookImage extends StatelessWidget {
         child: CachedNetworkImage(
           fit: BoxFit.fill,
           imageUrl: imageUrl,
+          placeholder: (context, url) => const CustomBookImageAnimation(),
           errorWidget: (context, url, error) => const Icon(
             Icons.error,
           ),
