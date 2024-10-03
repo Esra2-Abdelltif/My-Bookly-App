@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:bookly_project/core/utils/extension/screen_padding.dart';
 import 'package:bookly_project/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_project/features/home/presentation/view/book_details_view/widget/books_details_section.dart';
@@ -18,7 +19,8 @@ class BookDetailsViewBody extends StatelessWidget {
           hasScrollBody: false,
           child:  Column(
             children: [
-              const CustomBookDetailsAppBar(),
+              FadeInUp(
+                  from: 20,child: const CustomBookDetailsAppBar()),
               BookDetailsSection(book: bookModel,),
                const Expanded(
                 child: SizedBox(
