@@ -84,3 +84,74 @@ class BookListViewItem extends StatelessWidget {
     );
   }
 }
+class BookListViewItemAnimation extends StatelessWidget {
+  const BookListViewItemAnimation({super.key, });
+
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 125,
+      child: Row(
+        children: [
+          const CustomBookImageAnimation(),
+          const SizedBox(
+            width: 30,
+          ),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  decoration:  BoxDecoration(
+                    borderRadius: const BorderRadius.all(
+                        Radius.circular(12)
+                    ),
+                    color: Colors.grey[850]!,
+                  ),
+                  height:10,
+                  width: context.width*.8,
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Container(
+                  decoration:  BoxDecoration(
+                    borderRadius: const BorderRadius.all(
+                        Radius.circular(12)
+                    ),
+                    color: Colors.grey[850]!,
+                  ),
+                  height:10,
+                  width: context.width*.6,
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  children: [
+                    Container(
+                      decoration:  BoxDecoration(
+                        borderRadius: const BorderRadius.all(
+                            Radius.circular(12)
+                        ),
+                        color: Colors.grey[850]!,
+                      ),
+                      height:10,
+                      width: context.width*.3,
+                    ),
+                    const Spacer(),
+                    const BookRating(
+                      rating: 0,
+                      count: 0,
+                    )
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
