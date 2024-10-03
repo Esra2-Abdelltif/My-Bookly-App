@@ -12,7 +12,7 @@ class SearchRepoImpl implements SearchRepo {
 
 
   @override
-  Future<Either<Failure, List<BookModel>>> searchBooks(String query) async{
+  Future<Either<Failure, List<BookModel>>> searchBooks({required String query}) async{
     try {
       var data = await apiHelper.get(endPoint: BooksApiConstance.searchBooksPath(query: query));
       List<BookModel> books = [];
