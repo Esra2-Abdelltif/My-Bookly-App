@@ -14,3 +14,4 @@ class SearchBooksFailure extends SearchBooksState {}
 class SearchBooksSuccess extends SearchBooksState {}
 
 class SearchBooksLoading extends SearchBooksState {}
+class SearchBooks extends SearchBooksState {}

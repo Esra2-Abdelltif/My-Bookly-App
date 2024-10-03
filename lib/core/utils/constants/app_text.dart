@@ -4,6 +4,6 @@ class AppConstantText {
   static String free = 'Free';
   static String youCanAlsoLike = 'You can also like';
   static String searchResult = 'Search Result';
-
+  static String searchHint ='Write the title or author of the book';
 
 }
