@@ -3,6 +3,7 @@ import 'package:bookly_project/config/routes/app_routes.dart';
 import 'package:bookly_project/core/services/singletones/registered_singletones.dart';
 import 'package:bookly_project/features/home/presentation/manger/featured_books_cubit/featured_books_cubit.dart';
 import 'package:bookly_project/features/home/presentation/manger/newest_books_cubit/newset_books_cubit.dart';
+import 'package:bookly_project/features/search/presentation/manger/search_books_cubit/search_books_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -32,6 +33,9 @@ class MyBooklyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => NewsetBooksCubit()..fetchNewestBooks(),
+        ),
+        BlocProvider(
+          create: (context) => SearchBooksCubit(),
         )
       ],
       child: MaterialApp.router(

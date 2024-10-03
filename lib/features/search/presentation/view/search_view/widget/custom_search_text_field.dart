@@ -1,18 +1,29 @@
+import 'package:bookly_project/core/utils/constants/app_text.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CustomSearchTextField extends StatelessWidget {
-  const CustomSearchTextField({super.key});
+  final TextEditingController controller ;
+  final ValueChanged<String>? onChanged;
+  final VoidCallback? onTap;
+  const CustomSearchTextField({super.key,
+    required this.controller,
+    required this.onChanged,
+     this.onTap,
+
+  });
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: controller,
+      onChanged: onChanged,
       decoration: InputDecoration(
         enabledBorder: buildOutlineInputBorder(),
         focusedBorder: buildOutlineInputBorder(),
-        hintText: 'Search',
+        hintText: AppConstantText.searchHint,
         suffixIcon: IconButton(
-          onPressed: () {},
+          onPressed: onTap,
           icon: const Opacity(
             opacity: .8,
             child: Icon(

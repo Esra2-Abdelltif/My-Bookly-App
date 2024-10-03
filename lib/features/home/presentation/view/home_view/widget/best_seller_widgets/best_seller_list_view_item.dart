@@ -37,7 +37,7 @@ class BookListViewItem extends StatelessWidget {
                   SizedBox(
                     width: context.width * .5,
                     child: Text(
-                      bookModel.volumeInfo.title!,
+                      bookModel.volumeInfo.title ??"",
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: Styles.textStyle20.copyWith(
@@ -51,7 +51,7 @@ class BookListViewItem extends StatelessWidget {
                   Opacity(
                     opacity: .7,
                     child: Text(
-                      bookModel.volumeInfo.authors![0],
+                      bookModel.volumeInfo.authors ==null?"": bookModel.volumeInfo.authors![0],
                       overflow: TextOverflow.ellipsis,
                       style: Styles.textStyle14,
                     ),

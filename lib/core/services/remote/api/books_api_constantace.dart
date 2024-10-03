@@ -5,7 +5,9 @@ class BooksApiConstance{
 
   static const String featuredBooksPath ="$baseUrl?Filtering=free-ebooks&q=subject:Programming&key=$appKey";
   static const String similarBooksPath ="$baseUrl?Filtering=free-ebooks&Sorting=relevance &q=subject:Programming&key=$appKey";
-
+  static   String searchBooksPath({required String query}) {
+    return 'https://www.googleapis.com/books/v1/volumes?q=$query&key=$appKey';
+  }
 
 }
 const int badRequestStatusCode = 400;

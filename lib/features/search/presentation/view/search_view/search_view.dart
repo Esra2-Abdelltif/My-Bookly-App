@@ -1,5 +1,5 @@
 import 'package:bookly_project/core/utils/extension/screen_padding.dart';
-import 'package:bookly_project/features/search/widget/search_view_body.dart';
+import 'package:bookly_project/features/search/presentation/view/search_view/widget/search_view_body.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
