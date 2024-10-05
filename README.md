@@ -42,7 +42,7 @@ Simple Flutter Books App With MVVM Architecture, U sing Cubit , RestAPI , Shared
 
 # 📱 ScreenShoot:
 
-| Home Screen           | Details Screen            |   Search Screen          
+| Home Screen           |Details Screen            |   Search Screen          
 ------------------------:|:-------------------------:|:-------------------------:
 ![WhatsApp Image 2024-10-05 at 21 43 48_8ea85959](https://github.com/user-attachments/assets/2aeae73e-d520-4c87-9945-a1011c9f0202)
 |![WhatsApp Image 2024-10-05 at 21 44 00_220484f7](https://github.com/user-attachments/assets/bf278170-c64a-4e55-88e1-f605651f85ea)
