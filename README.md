@@ -1,16 +1,37 @@
-# bookly_project
+# My Bookly Project
 
 A new Flutter project.
 
-## Getting Started
+# 🌟 App Features 🌟
 
-This project is a starting point for a Flutter application.
+ - 📍 Get News and Best Selller Books.
+ - 📍 Show Details Of Books.
+ - 📍 Open Book in web Browsers.
+ - 📍 Can Search For Books.
+ - 📍 Add Animations.
+ - 📍 Add localization in Project.
 
-A few resources to get you started if this is your first Flutter project:
+## ⚡Installation
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+To install the Flutter Stripe Payment Package, follow these steps
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Add the package to your project's dependencies in the `pubspec.yaml` file:
+   ```yaml
+   dependencies:
+   
+   font_awesome_flutter: ^10.7.0
+   cached_network_image: ^3.4.1
+   google_fonts: ^6.2.1
+   go_router: ^14.2.8
+   equatable: ^2.0.5
+   dio: ^5.7.0
+   dartz: ^0.10.1
+   get_it: ^8.0.0
+   flutter_bloc: ^8.1.6
+   url_launcher: ^6.3.0
+   shimmer: ^3.0.0
+   animate_do: ^2.1.0
+   shared_preferences: ^2.3.2
+    ``` 
+
+# 🎥 Video
