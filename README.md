@@ -1,17 +1,17 @@
 # My Bookly Project
 
-A new Flutter project.
+Simple Flutter Books App With MVVM Architecture, U sing Cubit , RestAPI , SharedPrefs , Animations.
 
 # 🌟 App Features 🌟
 
- - 📍 Get News and Best Selller Books.
- - 📍 Show Details Of Books.
- - 📍 Open Book in web Browsers.
- - 📍 Can Search For Books.
- - 📍 Add Animations.
- - 📍 Add localization in Project.
+ - Get News and Best Selller Books.
+ - Show Details Of Books.
+ - Open Book in web Browsers.
+ - Can Search For Books.
+ - Add Animations.
+ - Add localization in Project.
 
-## ⚡Installation
+##🛠 Dependencies
 
 
 1. Add the package to your project's dependencies in the `pubspec.yaml` file:
@@ -31,6 +31,14 @@ A new Flutter project.
      shimmer: ^3.0.0
      animate_do: ^2.1.0
      shared_preferences: ^2.3.2
-    ``` 
+    ```
+
+
+   
+# 📁 Project Structure
+
+![image](https://github.com/user-attachments/assets/101f25cc-8697-4822-892c-55ada06756ac)
+
+
 
 # 🎥 Video
