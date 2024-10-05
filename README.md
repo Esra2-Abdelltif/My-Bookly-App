@@ -11,10 +11,10 @@ Simple Flutter Books App With MVVM Architecture, U sing Cubit , RestAPI , Shared
  - Add Animations.
  - Add localization in Project.
 
-##🛠 Dependencies
+# 🛠 Dependencies
 
 
-1. Add the package to your project's dependencies in the `pubspec.yaml` file:
+- Add the package to your project's dependencies in the `pubspec.yaml` file:
 
    ```yaml
    dependencies:
