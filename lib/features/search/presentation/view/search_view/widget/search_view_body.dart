@@ -1,5 +1,5 @@
 import 'package:animate_do/animate_do.dart';
-import 'package:bookly_project/core/utils/constants/app_text.dart';
+import 'package:bookly_project/core/utils/constants/app_strings.dart';
 import 'package:bookly_project/core/utils/extension/screen_padding.dart';
 import 'package:bookly_project/core/utils/styles/text_style.dart';
 import 'package:bookly_project/features/search/presentation/manger/search_books_cubit/search_books_cubit.dart';
@@ -38,7 +38,7 @@ class SearchViewBody extends StatelessWidget {
               ),
 
               searchBooksCubit.controller.text.isEmpty ? const Center() : Text(
-                AppConstantText.searchResult,
+                AppStrings.searchResult,
                 style: Styles.textStyle18,
               ),
               const SizedBox(

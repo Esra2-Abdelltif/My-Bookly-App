@@ -1,5 +1,5 @@
 import 'package:animate_do/animate_do.dart';
-import 'package:bookly_project/core/utils/constants/app_text.dart';
+import 'package:bookly_project/core/utils/constants/app_strings.dart';
 import 'package:bookly_project/core/utils/extension/screen_padding.dart';
 import 'package:bookly_project/core/utils/styles/text_style.dart';
 import 'package:bookly_project/features/home/presentation/view/home_view/widget/best_seller_widgets/best_seller_list_view.dart';
@@ -26,7 +26,7 @@ class HomeViewBody extends StatelessWidget {
               FadeInUp(
                 from: 40,
                 child: Text(
-                  AppConstantText.bestSeller,
+                  AppStrings.bestSeller,
                   style: Styles.textStyle18,
                 ).paddingAll(30),
               ),

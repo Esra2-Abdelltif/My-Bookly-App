@@ -1,5 +1,5 @@
 
-import 'package:bookly_project/core/utils/constants/app_text.dart';
+import 'package:bookly_project/core/utils/constants/app_strings.dart';
 import 'package:bookly_project/core/utils/styles/text_style.dart';
 import 'package:bookly_project/features/home/presentation/view/book_details_view/widget/similar_books_list_view.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +14,7 @@ class SimilarBooksSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-    AppConstantText.youCanAlsoLike,
+    AppStrings.youCanAlsoLike,
           style: Styles.textStyle14.copyWith(
             fontWeight: FontWeight.w600,
           ),

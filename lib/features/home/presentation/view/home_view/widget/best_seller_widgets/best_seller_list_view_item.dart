@@ -1,6 +1,6 @@
 import 'package:bookly_project/config/routes/app_routes.dart';
 import 'package:bookly_project/core/utils/constants/app_constants.dart';
-import 'package:bookly_project/core/utils/constants/app_text.dart';
+import 'package:bookly_project/core/utils/constants/app_strings.dart';
 import 'package:bookly_project/core/utils/extension/media_query_values.dart';
 import 'package:bookly_project/core/utils/styles/text_style.dart';
 import 'package:bookly_project/features/home/data/models/book_model/book_model.dart';
@@ -62,7 +62,7 @@ class BookListViewItem extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        AppConstantText.free,
+                        AppStrings.free,
                         style: Styles.textStyle20.copyWith(
                           fontWeight: FontWeight.bold,
                         ),

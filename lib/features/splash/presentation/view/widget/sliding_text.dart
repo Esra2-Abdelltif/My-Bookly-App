@@ -1,4 +1,4 @@
-import 'package:bookly_project/core/utils/constants/app_text.dart';
+import 'package:bookly_project/core/utils/constants/app_strings.dart';
 import 'package:flutter/material.dart';
 
 
@@ -18,7 +18,7 @@ class SlidingText extends StatelessWidget {
           return SlideTransition(
             position: slidingAnimation,
             child:  Text(
-              AppConstantText.readFreeBooks,
+              AppStrings.readFreeBooks,
               textAlign: TextAlign.center,
             ),
           );
