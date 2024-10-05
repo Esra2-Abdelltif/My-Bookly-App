@@ -4,6 +4,8 @@
  "free" : "Free",
  "You_can_also_like" : "You can also like",
  "search_result" : "Search Result",
- "search_hint" : "Write the title or author of the book"
+ "search_hint" : "Write the title or author of the book",
+ "not_avaliable": "Not Avaliable",
+ "preview": "Preview"
 
 }

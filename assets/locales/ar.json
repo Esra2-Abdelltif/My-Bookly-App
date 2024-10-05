@@ -4,5 +4,8 @@
   "free" : "مجاني",
   "You_can_also_like" : "يمكنك أيضا أن تحب",
   "search_result" : "نتيجة البحث",
-  "search_hint" : "كتابة عنوان الكتاب أو مؤلفه"
+  "search_hint" : "كتابة عنوان الكتاب أو مؤلفه",
+  "not_avaliable": "غير متوفر",
+  "preview": "عرض "
+
 }

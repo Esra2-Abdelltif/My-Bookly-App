@@ -16,7 +16,6 @@ class LocaleCubit extends Cubit<LocaleState> {
     final response = await getIt<BaseLangRepository>().getSavedLang();
     response.fold((failure) => debugPrint(AppStrings.cacheFailure), (value) {
       currentLangCode = value;
-      print(value);
       emit(ChangeLocaleState(Locale(currentLangCode)));
     });
   }
