@@ -1,5 +1,6 @@
 import 'package:bookly_project/config/locales/app_localizations_setup.dart';
 import 'package:bookly_project/config/routes/app_routes.dart';
+import 'package:bookly_project/config/themes/app_dark_themes.dart';
 import 'package:bookly_project/core/utils/constants/app_colors.dart';
 import 'package:bookly_project/features/book_app/presentation/manger/books_app_cubit/books_app_cubit.dart';
 import 'package:bookly_project/features/home/presentation/manger/featured_books_cubit/featured_books_cubit.dart';
@@ -35,11 +36,7 @@ class MyBooklyApp extends StatelessWidget {
             // home: const SplashView(),
             routerConfig: AppRouter.router,
             debugShowCheckedModeBanner: false,
-            theme: ThemeData.dark().copyWith(
-              scaffoldBackgroundColor: AppColors.kPrimaryColor,
-              appBarTheme: AppBarTheme(backgroundColor: AppColors.kPrimaryColor),
-              textTheme: GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme),
-            ),
+            theme:getThemeDataDark(),
             locale: state.locale,
             supportedLocales: AppLocalizationsSetup.supportedLocales,
             localeResolutionCallback: AppLocalizationsSetup.localeResolutionCallback,
