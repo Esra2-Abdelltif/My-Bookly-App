@@ -1,13 +1,14 @@
 # My Bookly Project
 
-Simple Flutter Books App With MVVM Architecture, U sing Cubit , RestAPI , SharedPrefs , Animations.
+The app offers users the ability to preview books, search for titles, and browse by category—making it easy for book lovers to find exactly what they’re looking for. From the seamless API integration to leveraging the BLoC state management, I implemented the MVVM pattern to ensure the app is robust, scalable, and easy to maintain.
 
 # 🌟 App Features 🌟
 
- - Get News and Best Selller Books.
- - Show Details Of Books.
- - Open Book in web Browsers.
- - Can Search For Books.
+ -  Book Search and Filter by Category: Quickly locate your favorite books by title or category..
+ - Preview and Read Books: Get a sneak peek before diving into your next read..
+ - API Integration: Dynamic updates and fast performance to keep content fresh and relevant.
+ - State Management (BLoC): Efficient state handling for a smooth, bug-free user experience
+ - MVVM Architecture Pattern: Ensures clean code structure, separation of concerns, and easy maintainability.
  - Add Animations.
  - Add localization in Project.
 
